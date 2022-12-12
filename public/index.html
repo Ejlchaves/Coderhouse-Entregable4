@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Entregable 4 - APIRest</title>
+</head>
+<body>
+    <div>Metodo POST</div>
+    <form action="/api/productos" method="post" target="_blank">
+        <div>
+            <label for="title">Nombre del producto:</label>
+            <input type="text" name="title" id="title">
+        </div>
+        <div>
+            <label for="price">Precio del producto:</label>
+            <input type="number" name="price" id="price">
+        </div>
+        <div>
+            <label for="thumbnail">URL del thumbnail:</label>
+            <input type="url" name="thumbnail" id="thumbnail" required>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    
+</body>
+</html>
