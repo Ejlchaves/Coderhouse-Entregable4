@@ -3,9 +3,18 @@ const Container = require('./Container');
 const router = express.Router();
 const container = new Container()
 
+/* router.get('/', (req, res) => {
+    res.render("index")
+}) */
+
 router.get('/', (req, res) => {
     const productos = container.getAll();
-    res.send(productos)
+    /* res.send(productos) */
+    res.render("index", {listado:productos, listExists:true})
+    if(productos.length === 0) {
+        const error = new Error('No hay productos listados')
+        return res.render("index", {error});
+    }
 })
 
 router.get('/:id', (req, res) => {
@@ -17,7 +26,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     const producto = req.body;
     const newproducto = container.create(producto)
-    res.send(newproducto)
+    return res.render('index', newproducto)
 })
 
 router.put('/:id', (req, res) => {

@@ -4,7 +4,13 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
-app.use(express.static('public'))
+/* app.use(express.static('public')) */
+
+
+//Configuracion del HBS
+app.set('view engine','hbs')
+app.set('views','./app/views')
+
 app.use('/api/productos', router);
 
 const PORT = 8080;
