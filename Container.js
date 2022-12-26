@@ -13,9 +13,9 @@ class Container {
         const producto = this.productos.find(prod => prod.id === id)
         if(producto) {
             return producto
-        } else {
+        } /* else {
             return ERROR
-        }
+        } */
     }
 
     create(producto) {

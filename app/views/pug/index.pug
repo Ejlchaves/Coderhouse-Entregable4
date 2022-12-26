@@ -1,0 +1,25 @@
+html 
+    head 
+        title= 'Entregable 5 - Motores de Plantillas'
+    body 
+        header 
+            button
+                a(href="/api") Lista de productos
+            button 
+                a(href="/api/productos") Formulario de productos
+        main(style="display:flex; justify-content:stretch; align-content:center;") 
+            table(style="margin:10px;") 
+                thead
+                    tr
+                     th= 'ID'
+                     th= 'Title'
+                     th= 'Price'
+                     th= 'URL Foto'
+                tbody
+                    each producto in productos
+                        tr 
+                            td= producto.id
+                            td= producto.title 
+                            td= producto.price
+                            td 
+                                img(src=producto.thumbnail, alt=producto.title)

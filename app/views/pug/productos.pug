@@ -1,0 +1,43 @@
+html 
+    head 
+        title= 'Entregable 5 - Motores de Plantillas'
+    body 
+        header(style="margin:10px") 
+            button
+                a(href="/api") Lista de productos
+            button 
+                a(href="/api/productos") Formulario de productos
+        main 
+            div Metodo POST
+    form(action="/api/productos", method="post", style="margin:5px")
+        div
+            label(for="title") Nombre del producto:
+            input(type="text" name="title" id="title")
+        
+        div
+            label(for="price") Precio del producto:
+            input(type="number" name="price" id="price")
+        
+        div
+            label(for="thumbnail") URL del thumbnail:
+            input(type="url" name="thumbnail" id="thumbnail" required)
+        
+        div
+            input(type="submit" value="Submit")
+
+        table(class="table" style="margin: 5px")
+            thead
+                tr(class="bg-dark text-light")
+                    th(scope="col") ID
+                    th(scope="col") Title
+                    th(scope="col") Price
+                    th(scope="col") URL de Foto
+            tbody
+                 tr
+                    th(scope="row")= id
+                    td= title
+                    td= price
+                    td
+                        img(src=thumbnail, alt=title)
+
+        
